@@ -22,6 +22,13 @@ app.get("/profile/:username/article/:slug", (req, res) => {
     res.send(`<h1>Viewing article ${req.params.slug} of user ${req.params.username}</h1>`); 
 });
 
+// query parameters in express
+
+app.get("/product", (req, res) => {
+    console.log(req.query);
+    res.send(`<h1>Viewing product: ${req.query.name} with category: ${req.query.category}</h1>`);
+});
+
 app.get('/', (req, res) =>  {
 
     // console.log(import.meta.url);
