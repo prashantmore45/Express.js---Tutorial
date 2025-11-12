@@ -29,6 +29,7 @@ app.get("/product", (req, res) => {
     res.send(`<h1>Viewing product: ${req.query.name} with category: ${req.query.category}</h1>`);
 });
 
+
 app.get('/', (req, res) =>  {
 
     // console.log(import.meta.url);
