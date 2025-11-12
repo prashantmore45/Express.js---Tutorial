@@ -4,6 +4,13 @@ import path from 'path';
 
 const app = express();
 
+// absolute path
+
+const staticPath = path.join(import.meta.dirname, "public");
+
+app.use(express.static(staticPath));
+
+
 
 app.get('/', (req, res) =>  {
 
