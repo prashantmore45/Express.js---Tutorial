@@ -8,9 +8,19 @@ const app = express();
 
 const staticPath = path.join(import.meta.dirname, "public");
 
-app.use(express.static(staticPath));
+app.use("/public", express.static(staticPath));
 
+// route paramreters in express
 
+app.get("/profile/:username", (req, res) => {
+    console.log(req.params);
+    res.send(`<h1>Welcome to the profile of ${req.params.username}</h1>`);
+});
+
+app.get("/profile/:username/article/:slug", (req, res) => {
+    console.log(req.params);
+    res.send(`<h1>Viewing article ${req.params.slug} of user ${req.params.username}</h1>`); 
+});
 
 app.get('/', (req, res) =>  {
 
