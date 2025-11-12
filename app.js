@@ -1,13 +1,22 @@
 import express from 'express';
-import {PORT} from './env.js'
+import {PORT} from './env.js';
+import path from 'path';
 
 const app = express();
 
-app.get('/', (req, res) => res.send('<h1>Hello World!</h1>'));
 
-app.get('/about', (req, res) => res.send('<h1>About Page</h1>'));
+app.get('/', (req, res) =>  {
 
-app.get('/contact', (req, res) => res.send('<h1>Contact Page</h1>'));
+    // console.log(import.meta.url);
+    // const __filename = new URL(import.meta.url).pathname;
+    // console.log(__filename);
+
+    const HomePagePatH = path.join(import.meta.dirname, "public", "index.html");
+    res.sendFile(HomePagePatH);
+
+    
+});
+
 
 // const PORT = process.env.PORT || 3000;
 

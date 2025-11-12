@@ -26,6 +26,6 @@ console.log(parseUserAge);
 
 const portSchema = z.coerce.number().min(1).max(65535).default(3000);
 
-const PORT = portSchema.parse(process.env.PORT);
+export const PORT = portSchema.parse(process.env.PORT);
 
 console.log(`Server is running at port: ${PORT}`);
