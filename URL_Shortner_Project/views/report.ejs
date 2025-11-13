@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Report</title>
+    <link rel="stylesheet" href="/report.css">
 </head>
 <body>
 
-    <h1>Student Report Card</h1>
-    <p>Name: <%= student.name %></p>
-    <p>Roll_no: <%= student.roll_no %></p>
-    <p>Branch: <%= student.branch %></p>
-    <p>Year: <%= student.year %></p>
+    <%- include('header') %>
 
+    <section class="report-section">
+        <h1>Student Report Card</h1>
+        <ul>
+            <% student.map((s) => { %>
+            <li>
+                <p>Name: <%= s.name %></p>
+                <p>Roll_no: <%= s.roll_no %></p>
+                <p>Branch: <%= s.branch %></p>
+                <p>Year: <%= s.year %></p>
+            </li>
+            <% }) %>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 My College | All rights reserved</p>
+    </footer>
 </body>
 </html>

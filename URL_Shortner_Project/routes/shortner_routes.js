@@ -2,6 +2,7 @@ import { readFile, writeFile } from "fs/promises";
 import crypto from "crypto";
 import path  from "path";
 import { Router } from "express";
+import { name } from "ejs";
 
 const router = Router();
 
@@ -27,12 +28,84 @@ const saveLinks = async (links) => {
 
 router.get("/report", (req, res) => {
 
-    const student = {
+    const student = [
+        {
             name: "Prashant More",
             roll_no: "48",
             branch: "Computer Science",
             year: "2025"
-        };
+        }, {
+            name: "Deepak Kumar",
+            roll_no: "52",
+            branch: "Mechanical Engineering",
+            year: "2025"
+        }, {
+            name: "Anjali Singh",
+            roll_no: "60",
+            branch: "Electrical Engineering",
+            year: "2025"
+        }, {
+            name: "Riya Patel",
+            roll_no: "73",
+            branch: "Civil Engineering",
+            year: "2025"
+        }, {
+            name: "Amit Sharma",
+            roll_no: "85",
+            branch: "Chemical Engineering",
+            year: "2025"
+        }, {
+            name: "Sneha Gupta",
+            roll_no: "91",
+            branch: "Biotechnology",
+            year: "2025"
+        }, {
+            name: "Vikram Joshi",
+            roll_no: "97",
+            branch: "Aerospace Engineering",
+            year: "2025"
+        }, {
+            name: "Pooja Reddy",
+            roll_no: "102",
+            branch: "Information Technology",
+            year: "2025"
+        }, {
+            name: "Karan Mehta",
+            roll_no: "110",
+            branch: "Electronics Engineering",
+            year: "2025"
+        }, {
+            name: "Nisha Verma",
+            roll_no: "118",
+            branch: "Environmental Engineering",
+            year: "2025"
+        }, {
+            name: "Rohit Kapoor",
+            roll_no: "125",
+            branch: "Industrial Engineering",
+            year: "2025"
+        }, {
+            name: "Sonal Dixit",
+            roll_no: "132",
+            branch: "Materials Science",
+            year: "2025"
+        }, {
+            name: "Ajay Nair",
+            roll_no: "140",
+            branch: "Nuclear Engineering",
+            year: "2025"
+        }, {
+            name: "Maya Iyer",
+            roll_no: "148",
+            branch: "Petroleum Engineering",
+            year: "2025"
+        }, {
+            name: "Tarun Gill",
+            roll_no: "155",
+            branch: "Robotics Engineering",
+            year: "2025"
+        }
+    ];
 
     return res.render("report", { student });
 });
