@@ -25,6 +25,19 @@ const saveLinks = async (links) => {
 };
 
 
+router.get("/report", (req, res) => {
+
+    const student = {
+            name: "Prashant More",
+            roll_no: "48",
+            branch: "Computer Science",
+            year: "2025"
+        };
+
+    return res.render("report", { student });
+});
+
+
 router.get("/", async(req, res) => {
     try {
         const file = await readFile(path.join("views", "index.html"));
@@ -81,6 +94,7 @@ router.get("/:shortCode", async (req, res) => {
         return res.status(500).send("Internal Server Error");
     }
 });
+
 
 
 const shortnerRoutes = router;

@@ -11,6 +11,7 @@ app.use(express.static(path.join(import.meta.dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
 
+app.set("view engine", "ejs");
 
 app.use(shortnerRoutes);
 
