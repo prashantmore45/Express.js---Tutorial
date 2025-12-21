@@ -30,11 +30,11 @@
                 return `<li><a href="/${code}" target="_blank">${req.headers.host}/${code}</a> - ${url}</li>`;
             }).join("") -->
 
-            <% Object.entries(links).map(([code, url]) => { %>
+            <% links.map(({ shortCode, url }) => { %>
                 <% const truncatedURL = url.length >= 30 ? `${url.slice(0, 30)}...` : url; %>
             <li>
-                <a href="/<%= code %>" target="_blank">
-                    <%= host %>/<%= code %>
+                <a href="/<%= shortCode %>" target="_blank">
+                    <%= host %>/<%= shortCode %>
                 </a> - <%= truncatedURL %>
             </li>
             <% }) %>
